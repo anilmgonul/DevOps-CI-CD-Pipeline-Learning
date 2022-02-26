@@ -67,3 +67,62 @@ Daha sonra ise, *staging server*'a yonlendirir ve Docker'i kullanarak deploy ede
 ***Docker*** server olusturabilecegimiz sanal bir ortam olarak dusunebiliriz. Cok kisa sure icerisinde server olusturabiliriz ve deploy edip islem hatalarini gozden gecirebiliriz.
 
 ***Nicin Docker kullaniyoruz?*** Cunku, cok kisa bir sure icerisinde tum cluster'i calistirabiliriz. imaj kayitlari tutabilir ve bunlari depolayabiliriz. Istegimiz herhangi bir vakitte ve her ortamda bunlari kullanabilir replicalarini yapabiliriz.
+
+
+## Hands-On: Building a CI/CD Pipeline Using Docker and Jenkins
+
+Step 1: Terminalimizi aciyoruz ve Jenkins ve Docker'lari baslatiyoruz.
+
+```hyper
+ launchctl start jenkins
+
+ launchctl enable jenkins
+
+ launchctl start docker
+ ```
+
+Step 2: Daha sonra ise belirtilen porta giriyoruz. Benim durumumda [http://localhost:8080/](http://localhost:8080/). Ardindan **New Item** butonuna tiklayalim.
+
+![alt](cicdmodels/newitem.png)
+
+Step 3: **freestyle** projesine tiklayalim the itemimize isim verelim. (Job1 diyorum ben)
+
+![alt](cicdmodels/freestyle.png)
+
+Step 4: **Source Code Management**'i secip, **Git** repository'imizi yapistirdiktan sonra, **Apply** butonuna tikliyoruz.
+
+![alt](cicdmodels/sourcecodemanagement.png)
+
+Step 5: Daha sonra **Build** sekmesine gelip **Execute Shell**'i secelim.
+
+![alt](cicdmodels/buildshell.png)
+
+Step 6: Simdi ise shell komutlarini saglamamiz gerekiyor.
+
+![alt](cicdmodels/executeshell1.png)
+
+Step 7: Ayni sureci tekrarlayip **Job2** adinda item olusturup shell komutlarini girmemiz gerekiyor.
+
+![alt](cicdmodels/executeshell2.png)
+
+Step 8: Ayni sureci tekrarlayip **Job3** adinda item olusturup shell komutlarini girmemiz gerekiyor.
+
+![alt](cicdmodels/executeshell3.png)
+
+Step 9: Job1, Job2 ve Job3 icin **Configure** yapacagiz. Ve **Post-build Actions** sekmesinden **Build other project**i sececegiz.
+
+![alt](cicdmodels/buildotherprojects.png)
+
+Step 10: **Build Pipeline View** isaretleyip isim verecegiz.
+
+![alt](cicdmodels/pipelineview.png)
+
+Step 11: **initial Job** kismina Job1 yazip okay diyelim.
+
+Step 12: **Run** deyip CI/CD surecini calistiralim.
+
+![alt](cicdmodels/buildpipeline.png)
+
+Step 13 : Olusturma basariyla gerceklestikten sonra, [localhost:8180/sample.text](localhost:8180/sample.text) acalim.
+
+![alt](cicdmodels/sampletext.png)
