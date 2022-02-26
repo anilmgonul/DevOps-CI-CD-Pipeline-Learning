@@ -48,4 +48,22 @@ Bu proje dongusu urun veya kod onaylanincaya kadar devam eder. Bu son asama ise 
 
 Bu kisa bilgi ile CI/CD Pipeline surecini ve nasil calistigini anlamaya calistik. Simdi ise Jenkins nedir ve nasil kullanilir onu anlamaya calisacagiz.
 
-        
+## The Ultimate CI Tool and Its Importance in the CI/CD Pipeline
+
+Amacimiz, yazilim gelistirici departmanindan aldigimiz kodun urun asamasina gelene kadar olan zamanda bu sureci automate etmek. Yazilim gelistirme proje dongusunu DevOps/automate mod icinde Pipelineboru hattini otomatik hale getirecegiz.
+
+![alt](cicdmodels/automate.png)
+
+**Jenkins** bizlere bir cok arac gerec ve arayuz saglayarak yazilim gelistirilmesinin automate etmedeki surecinde yardimci olacak.
+
+Biliyoruz ki, yazilim gelistirme ekibinin kodlari teslim ettigi Git repository'suna sahibiz. Daha sonrasinda *Jenkins* bu asamada devreye girecek ve front-end arac gereci olarak tum isi ve gorevleri tanimlamamizda saglayici olacak. Amacimiz, Continuous Integration yani surekli entegrasyon olgusunun saglandigindan emin olmak.
+
+Jenkins kodu Git'ten ceker ve kodlarin her bir daldan commit edildigi *commit phase*'e yonlendirir. Eger bu bir Java koduysa Jenkins'deki Maven'i kullaniriz, kodu derleriz ve deploy ederiz.
+
+Daha sonra ise, *staging server*'a yonlendirir ve Docker'i kullanarak deploy ederiz. Bir kac unit testten sonra urun olarak deger kazanir.
+
+![alt](cicdmodels/staging.png)
+
+***Docker*** server olusturabilecegimiz sanal bir ortam olarak dusunebiliriz. Cok kisa sure icerisinde server olusturabiliriz ve deploy edip islem hatalarini gozden gecirebiliriz.
+
+***Nicin Docker kullaniyoruz?*** Cunku, cok kisa bir sure icerisinde tum cluster'i calistirabiliriz. imaj kayitlari tutabilir ve bunlari depolayabiliriz. Istegimiz herhangi bir vakitte ve her ortamda bunlari kullanabilir replicalarini yapabiliriz.
