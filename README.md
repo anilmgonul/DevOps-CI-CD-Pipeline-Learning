@@ -6,4 +6,4 @@ CI/CD (Continuous Integration/Continuous Deployment) Pipeline uygulamasi modern 
 
 Oncelikle DevOps konseptini anlamak adina asagidaki semayi inceleyelim.  
 
-![alt](DevOps_schema.png)
+![alt](CI:CD models/DevOps_schema.png)
