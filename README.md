@@ -126,3 +126,5 @@ Step 12: **Run** deyip CI/CD surecini calistiralim.
 Step 13 : Olusturma basariyla gerceklestikten sonra, [localhost:8180/sample.text](localhost:8180/sample.text) acalim.
 
 ![alt](cicdmodels/sampletext.png)
+
+> [Learn How to Set Up a CI/CD Pipeline From Scratch](https://dzone.com/articles/learn-how-to-setup-a-cicd-pipeline-from-scratch)
